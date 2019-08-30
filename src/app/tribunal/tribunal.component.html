@@ -1,0 +1,51 @@
+<div>
+    <h4>Ajouter un tribunal</h4>
+    <form [formGroup]="myForm" (ngSubmit)= "createAffaire(myForm)">
+    
+    <label>Adresse:</label>
+    <input type="text" [(ngModel)]="tribunal.adresse" formControlName="adresseT">
+    <div *ngIf="myForm.get('titreA').hasError('required')">Tapez le titre</div>
+    
+    <label>Fax:</label>
+    <input type="number" [(ngModel)]="tribunal.fax" formControlName="faxT">
+     <div *ngIf="myForm.get('descriptionA').hasError('required')">Tapez la description</div>
+    
+    <label>Telephone:</label>
+    <input type="number" formControlName ="tribunal.telephone"[(ngModel)]="telephoneT">
+    <div *ngIf="myForm.get('telephoneT').hasError('required')">Tapez le numero de telephone</div>
+    
+    <label>Region:</label>
+    <input type="text" formControlName ="tribunal.region"[(ngModel)]="regionT">
+    <div *ngIf="myForm.get('regionT').hasError('required')">Taez votre region</div>
+    
+    
+    <button type="submit">Ajouter</button>
+    
+    </form>
+    
+    </div>
+       <div>
+        <table>
+        <tr>
+        <td>Adresse</td>    
+        <td>Fax</td>
+        <td>Telephone</td>
+        <td>Region</td>
+        </tr>
+    
+        <tr *ngFor="let i of tribunal">
+                <td>{{i.adresse}}</td>
+                <td>{{i.fax}}</td>
+                <td>{{i.telephone}}</td>
+                <td>{{i.region}}</td>
+                <td>
+                    <button (click)="deleteTribunal(i)">Supprimer</button>
+                    <button (click)="editTribunal(i)">Edit</button>
+            </td>    
+        </tr>
+    
+        </table>
+    </div>
+
+
+

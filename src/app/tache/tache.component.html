@@ -1,0 +1,49 @@
+<div>
+    <h4>Ajouter une tache</h4>
+    <form [formGroup]="myForm" (ngSubmit)= "createTache(myForm)">
+    
+    <label>Titre:</label>
+    <input type="text" [(ngModel)]="tache.titre" formControlName="titreT">
+    <div *ngIf="myForm.get('titreT').hasError('required')">Tapez le titre</div>
+    
+    <label>Description:</label>
+    <input type="text" [(ngModel)]="tache.description" formControlName="descriptionT">
+     <div *ngIf="myForm.get('descriptionT').hasError('required')">Tapez la description</div>
+    
+    <label>Date de creation:</label>
+    <input type="date" formControlName ="dateCreationT"[(ngModel)]="tache.dateCreation">
+    <div *ngIf="myForm.get('dateCreationT').hasError('required')">Tapez la date de creation</div>
+    
+    <label>Statut de l'audience:</label>
+    <input type="text" formControlName ="statutAudienceT"[(ngModel)]="tache.dateCreationTache">
+    <div *ngIf="myForm.get('statutAudienceT').hasError('required')">Statutde l'audience</div>
+    
+    
+    <button type="submit">Ajouter</button>
+    
+    </form>
+    
+    </div>
+       <div>
+        <table>
+        <tr>
+        <td>Titre</td>   
+        <td>Description</td>
+        <td>Date de creation</td>
+        <td>Statut de l'audience</td>
+        </tr>
+    
+        <tr *ngFor="let t of taches">
+                <td>{{t.tache}}</td>
+                <td>{{t.description}}</td>
+                <td>{{t.dateCreation}}</td>
+                <td>{{t.statutAudience}}</td>
+                <td>
+                    <button (click)="deleteTache(t)">Supprimer</button>
+                    <button (click)="editTache(t)">Edit</button>
+            </td>    
+        </tr>
+    
+        </table>
+    </div>
+    <p>tache works!</p>

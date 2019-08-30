@@ -1,0 +1,30 @@
+<div>
+        <h4>Ajouter un libelle</h4>
+        <form [formGroup]="myForm" (ngSubmit)= "createRole()">
+        
+        <label>Libelle:</label>
+        <input type="text" [(ngModel)]="role.libelle" formControlName="libelle">
+        
+     
+        
+        <button type="submit">Ajouter</button>
+        
+        </form>
+        
+        </div>
+           <div>
+            <table>
+            <tr>
+            
+            <td>Libelle</td>
+            <td>Action</td>
+            </tr>
+        
+            <tr *ngFor="let r of roles">
+                    
+                    <td>{{r.libelle}}</td>
+                    <td><button (click)="deleteRole(r)">Supprimer</button></td>  
+            </tr>
+        
+            </table>
+        </div>

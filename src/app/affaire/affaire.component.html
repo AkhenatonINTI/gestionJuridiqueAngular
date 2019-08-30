@@ -1,0 +1,50 @@
+<div>
+    <h4>Ajouter une affaire</h4>
+    <form [formGroup]="myForm" (ngSubmit)= "createAffaire(myForm)">
+    
+    <label>Titre:</label>
+    <input type="text" [(ngModel)]="affaire.titre" formControlName="titreA">
+    <div *ngIf="myForm.get('titreA').hasError('required')">Tapez le titre</div>
+    
+    <label>Description:</label>
+    <input type="text" [(ngModel)]="affaire.description" formControlName="descriptionA">
+     <div *ngIf="myForm.get('descriptionA').hasError('required')">Tapez la description</div>
+    
+    <label>Reference:</label>
+    <input type="date" formControlName ="affaire.reference"[(ngModel)]="referenceA">
+    <div *ngIf="myForm.get('referenceA').hasError('required')">Tapez la reference</div>
+    
+    <label>Statut:</label>
+    <input type="text" formControlName ="affaire.statut"[(ngModel)]="statutA">
+    <div *ngIf="myForm.get('statutA').hasError('required')">Statut</div>
+    
+    
+    <button type="submit">Ajouter</button>
+    
+    </form>
+    
+    </div>
+       <div>
+        <table>
+        <tr>
+        <td>Titre</td>    
+        <td>Description</td>
+        <td>Reference</td>
+        <td>Statut</td>
+        </tr>
+    
+        <tr *ngFor="let a of affaires">
+                <td>{{a.titre}}</td>
+                <td>{{a.description}}</td>
+                <td>{{a.reference}}</td>
+                <td>{{a.statut}}</td>
+                <td>
+                    <button (click)="deleteAffaire(a)">Supprimer</button>
+                    <button (click)="editAffaire(a)">Edit</button>
+            </td>    
+        </tr>
+    
+        </table>
+    </div>
+    <p>tache works!</p>
+

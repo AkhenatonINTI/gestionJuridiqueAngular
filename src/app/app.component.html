@@ -1,0 +1,75 @@
+<!--The content below is only a placeholder and can be replaced.-->
+ <div style="text-align: center">
+  <h1>
+    <span appMyDirective>Welcome to {{ title |uppercase}}!</span>
+  </h1>
+  
+</div>
+<!--
+<div [align]="alignement">
+  Personne :{{person}}
+</div>
+
+<div>
+
+  <button (click)="modifierPersonne()">Modifier</button>
+</div>
+
+<div>
+<input type="number" [(ngModel)]="tel">
+<p>Tel :{{tel}} </p>
+</div>
+
+<div>
+    <input type="number" [(ngModel)]="tel2">
+    <p>Tel :{{tel2}} </p>
+    </div>
+    
+    <div>
+        <button (click)="calculer()">Calculer</button>
+        </div>
+        <div>
+            Calcul :{{calc}}
+            </div>
+ <div>
+
+  <h1>Pipe Personalisé</h1>
+  <br>
+  <h1>La racine carree de 25 est :{{25 | sqrt}}</h1>
+  <h1>La racine carree de 100 est :{{100 | sqrt}}</h1>
+ </div>
+  -->
+ <nav>
+
+  <a routerLink="/user" routerLinkActive="active">Utilisateur</a>
+ </nav>
+
+ <nav>
+    <a routerLink="/role" routerLinkActive="active">Role</a>
+   </nav>
+
+   <nav>
+    <a routerLink="/tache" routerLinkActive="active">Tache</a>
+   </nav>
+
+   <nav>
+    <a routerLink="/tribunal" routerLinkActive="active">Tribunal</a>
+   </nav>
+
+   <nav>
+    <a routerLink="/afaire" routerLinkActive="active">Affaire</a>
+   </nav>
+
+   <nav>
+    <a routerLink="/document" routerLinkActive="active">Document</a>
+   </nav>
+
+   <nav>
+    <a routerLink="/tribunal" routerLinkActive="active">Tribunal</a>
+   </nav>
+
+   <nav>
+    <a routerLink="/phase" routerLinkActive="active">Phase</a>
+   </nav>
+
+<router-outlet></router-outlet>

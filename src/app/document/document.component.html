@@ -1,0 +1,51 @@
+<div>
+        <h4>Ajouter un document</h4>
+        <form [formGroup]="myForm" (ngSubmit)= "createDocument(myForm)">
+        
+        <label>Date de creation</label>
+        <input type="date" [(ngModel)]="document.dateCreation" formControlName="dateCreationD">
+        <div *ngIf="myForm.get('dateCreationD').hasError('required')"></div>
+
+        <label>Nom:</label>
+        <input type="text" formControlName ="document.nom"[(ngModel)]="nomD">
+        <div *ngIf="myForm.get('nomD').hasError('required')">Tapez le nom du document</div>
+        
+        <label>Description:</label>
+        <input type="text" [(ngModel)]="document.description" formControlName="descriptionD">
+         <div *ngIf="myForm.get('descriptionD').hasError('required')">Tapez la description</div>
+        
+        
+        
+       
+        
+        
+        <button type="submit">Ajouter</button>
+        
+        </form>
+        
+        </div>
+           <div>
+            <table>
+            <tr>
+            <td>Date de creation</td>    
+            <td>Nom</td>
+            <td>Description</td>
+            
+            </tr>
+        
+            <tr *ngFor="let d of document">
+                    <td>{{d.dateCreation}}</td>
+                    <td>{{d.nom}}</td>
+                    <td>{{d.description}}</td>
+                    
+            
+                    <td>
+                        <button (click)="deleteDocument(d)">Supprimer</button>
+                        <button (click)="editDocument(d)">Edit</button>
+                </td>    
+            </tr>
+        
+            </table>
+        </div>
+    
+    

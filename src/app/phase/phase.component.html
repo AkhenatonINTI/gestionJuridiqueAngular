@@ -1,0 +1,42 @@
+<div>
+    <h4>Ajouter un phase</h4>
+    <form [formGroup]="myForm" (ngSubmit)= "createAffaire(myForm)">
+    
+    <label>Nom:</label>
+    <input type="text" [(ngModel)]="phase.nom" formControlName="nomP">
+    <div *ngIf="myForm.get('nomP').hasError('required')">Tapez le nom</div>
+    
+    <label>Date de debut:</label>
+    <input type="date" [(ngModel)]="phase.dateDebut" formControlName="dateDebutP">
+     <div *ngIf="myForm.get('dateDebutP').hasError('required')">Tapez la date de debut/div>
+    
+    <label>Date de fin:</label>
+    <input type="date" formControlName ="phase.dateFin"[(ngModel)]="dateFinP">
+    <div *ngIf="myForm.get('telephoneT').hasError('required')">Tapez la date de fin</div>
+    
+    <button type="submit">Ajouter</button>
+    
+    </form>
+    
+    </div>
+       <div>
+        <table>
+        <tr>
+         
+        <td>Nom</td>
+        <td>Date de debut</td>
+        <td>Date de fin</td>
+        </tr>
+    
+        <tr *ngFor="let p of phase">
+                <td>{{p.nom}}</td>
+                <td>{{p.dateDebut}}</td>
+                <td>{{p.dateFin}}</td>
+                <td>
+                    <button (click)="deletePhase(p)">Supprimer</button>
+                    <button (click)="editPhase(p)">Edit</button>
+            </td>    
+        </tr>
+    
+        </table>
+    </div>

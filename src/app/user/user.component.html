@@ -1,0 +1,45 @@
+
+<div>
+<h4>Ajouter un utilisateur</h4>
+<form [formGroup]="myForm" (ngSubmit)= "createUser(myForm)">
+
+<label>Nom:</label>
+<input type="text" [(ngModel)]="user.nomUtilisateur" formControlName="nomU">
+<div *ngIf="myForm.get('nomU').hasError('required')">Tapez le nom</div>
+
+<label>Prenom:</label>
+<input type="text" [(ngModel)]="user.prenomUtilisateur" formControlName="prenomU">
+<div *ngIf="myForm.get('prenomU').hasError('required')">Tapez le prenom</div>
+
+<label>Email:</label>
+<input type="email"[(ngModel)] ="user.emailUtilisateur"formControlName="emailU">
+<div *ngIf="myForm.get('emailU').hasError('required')">Tapez l'email'</div>
+
+
+
+<button type="submit">Ajouter</button>
+
+</form>
+
+</div>
+   <div>
+    <table>
+    <tr>
+    <td>Nom</td>
+    <td>Prénom</td>
+    <td>Email</td>
+    <td>Action</td>
+    </tr>
+
+    <tr *ngFor="let u of users">
+            <td>{{u.nomUtilisateur}}</td>
+            <td>{{u.prenomUtilisateur}}</td>
+            <td>{{u.emailUtilisateur}}</td>
+            <td>
+                <button (click)="deleteUser(u)">Supprimer</button>
+                <button (click)="editUser(u)">Edit</button>
+        </td>    
+    </tr>
+
+    </table>
+</div>
