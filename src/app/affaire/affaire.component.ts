@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AffaireService } from '../service/affaire.service';
+import { Affaire } from '../model/affaire';
 
 @Component({
   selector: 'app-affaire',

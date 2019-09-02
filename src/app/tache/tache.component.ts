@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TacheService } from '../service/tache.service';
+import { Tache } from '../model/tache';
 
 @Component({
   selector: 'app-tache',

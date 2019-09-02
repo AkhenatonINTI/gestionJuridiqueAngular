@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TribunalService } from '../service/tribunal.service';
+import { Tribunal } from '../model/tribunal';
 
 @Component({
   selector: 'app-tribunal',

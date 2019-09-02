@@ -16,6 +16,7 @@ import { AffaireComponent } from './affaire/affaire.component';
 import { DocumentComponent } from './document/document.component';
 import { TribunalComponent } from './tribunal/tribunal.component';
 import { PhaseComponent } from './phase/phase.component';
+import { TacheDirective } from './tache.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PhaseComponent } from './phase/phase.component';
     AffaireComponent,
     DocumentComponent,
     TribunalComponent,
-    PhaseComponent
+    PhaseComponent,
+    TacheDirective
   ],
   imports: [
     BrowserModule,
